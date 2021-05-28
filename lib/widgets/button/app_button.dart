@@ -5,24 +5,37 @@ class AppButton extends StatelessWidget {
     this.text, {
     required this.onClick,
     this.varient = AppButtonVarient.primary,
+    this.isLoading = false,
   });
-  final Function onClick;
+  final void Function() onClick;
   final String text;
   final AppButtonVarient varient;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
       padding: const EdgeInsets.symmetric(vertical: 18),
-      onPressed: () {},
+      onPressed: onClick,
       minWidth: double.infinity,
       highlightColor: Colors.transparent,
-      child: Text(
-        text,
-        style: TextStyle(
-          color: appButtonTextColor(varient),
-        ),
-      ),
+      child: isLoading
+          ? SizedBox(
+              height: 16,
+              width: 16,
+              child: CircularProgressIndicator.adaptive(
+                strokeWidth: 3.0,
+                valueColor: new AlwaysStoppedAnimation<Color>(
+                  appButtonTextColor(varient),
+                ),
+              ),
+            )
+          : Text(
+              text,
+              style: TextStyle(
+                color: appButtonTextColor(varient),
+              ),
+            ),
       color: appButtonColor(varient),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(6),

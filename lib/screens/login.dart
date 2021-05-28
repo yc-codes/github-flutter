@@ -8,6 +8,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,11 +36,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 AppButton(
                   "SIGN IN WITH GITHUB",
                   onClick: () {},
+                  isLoading: isLoading,
                 ),
                 SizedBox(height: 8),
                 AppButton(
                   "SIGN IN WITH GITHUB ENTERPRICE",
-                  onClick: () {},
+                  onClick: () {
+                    print('adasd');
+                    setState(() {
+                      isLoading = !isLoading;
+                    });
+                  },
                   varient: AppButtonVarient.secondary,
                 ),
                 SizedBox(height: 8),
