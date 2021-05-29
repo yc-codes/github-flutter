@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:github_flutter/screens/master.dart';
+import 'package:github_flutter/utility/app_assets.dart';
 import 'package:github_flutter/utility/app_colors.dart';
 import 'package:github_flutter/widgets/button/app_button.dart';
 
@@ -17,16 +20,12 @@ class _LoginScreenState extends State<LoginScreen> {
         children: [
           Container(
             alignment: Alignment.center,
-            child: Image.asset(
-              'assets/logos/icon.png',
-              height: 90,
+            child: SvgPicture.asset(
+              AppAssets.githubMarkIcon,
+              color: Colors.white,
+              height: 60,
+              width: 60,
             ),
-            // child: Text(
-            //   'asdasd',
-            //   style: TextStyle(
-            //     color: Colors.white,
-            //   ),
-            // ),
           ),
           Container(
             padding: const EdgeInsets.all(16),
@@ -35,14 +34,19 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 AppButton(
                   "SIGN IN WITH GITHUB",
-                  onClick: () {},
+                  onClick: () {
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(builder: (builder) => MasterScreen()),
+                      (route) => false,
+                    );
+                  },
                   isLoading: isLoading,
                 ),
                 SizedBox(height: 8),
                 AppButton(
                   "SIGN IN WITH GITHUB ENTERPRICE",
                   onClick: () {
-                    print('adasd');
                     setState(() {
                       isLoading = !isLoading;
                     });
