@@ -21,7 +21,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             alignment: Alignment.center,
             child: SvgPicture.asset(
-              AppAssets.githubMarkIcon,
+              AppAssets.github_mark_icon,
               color: Colors.white,
               height: 60,
               width: 60,

@@ -11,10 +11,26 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'GitHub',
-      theme: ThemeData(
+      debugShowCheckedModeBanner: false,
+      darkTheme: ThemeData(
         scaffoldBackgroundColor: Color(0xFF050505),
         primarySwatch: Colors.blue,
         fontFamily: "Inter",
+        appBarTheme: AppBarTheme(
+          backgroundColor: Color(0xFF17181C),
+          elevation: 0,
+          // titleSpacing: 0,
+          titleTextStyle: TextStyle(
+            fontWeight: FontWeight.w700,
+          ),
+          actionsIconTheme: IconThemeData(
+            color: Color(0xFF58A6FF),
+          ),
+        ),
+        dividerTheme: DividerThemeData(
+          color: Colors.white12,
+          thickness: 1,
+        ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           showUnselectedLabels: true,
           type: BottomNavigationBarType.fixed,
