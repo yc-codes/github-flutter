@@ -18,6 +18,7 @@ class HomeIconTextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       padding: EdgeInsets.zero,
+      shape: RoundedRectangleBorder(),
       child: Container(
         padding: const EdgeInsets.symmetric(
           horizontal: 12,

@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'GitHub',
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
+        highlightColor: Colors.transparent,
         scaffoldBackgroundColor: Color(0xFF050505),
         primarySwatch: Colors.blue,
         fontFamily: "Inter",
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         dividerTheme: DividerThemeData(
           color: Colors.white12,
           thickness: 1,
+          space: 20,
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           showUnselectedLabels: true,
